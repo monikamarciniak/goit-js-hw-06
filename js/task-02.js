@@ -6,18 +6,11 @@ const ingredients = [
   'Herbs',
   'Condiments',
 ];
-const list = document.querySelector(".ingredients");
-//const list = document.createElement("ul");
-list.textContent = "ingredients";
-listItem.prepend(list);
+const list = document.querySelector("#ingredients");
 
-const listItem = document.createElement("li");
-listItem.textContent = 'Potatoes', 'Mushrooms', 'Garlic', 'Tomatos', 'Herbs', 'Condiments';
+const markup = ingredients
+  .map((ingredient) => `<li class="list-item">${ingredient}</li>`)
+  .join("");
 
-listItem.classListItem.add("item");
-
-
-list.after('Potatoes', 'Mushrooms', 'Garlic', 'Tomatos', 'Herbs', 'Condiments');
-
-console.log(list); 
-
+console.log(markup);
+list.innerHTML = markup;
